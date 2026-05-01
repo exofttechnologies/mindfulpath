@@ -12,7 +12,7 @@
 }
 
 .testi-inner {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -51,7 +51,7 @@
   background: rgba(18, 18, 18, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
-  padding: 40px 30px;
+  padding: 28px 24px;
   display: flex;
   flex-direction: column;
   backdrop-filter: blur(14px);
@@ -70,11 +70,11 @@
 }
 
 .testi-text {
-  font-size: 14px;
-  line-height: 1.8;
+  font-size: 13px;
+  line-height: 1.7;
   color: rgba(255, 255, 255, 0.7);
   font-style: italic;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
   flex-grow: 1;
 }
 

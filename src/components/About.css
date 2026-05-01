@@ -50,7 +50,7 @@
 .about-middle-area {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   flex-grow: 1;
   position: relative;
   z-index: 5;
@@ -64,12 +64,7 @@
   z-index: 6;
 }
 
-.about-right-col {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  z-index: 6;
-}
+/* removed right col */
 
 /* ── Bio Glass Card ── */
 .about-bio-card {
@@ -102,16 +97,17 @@
   color: rgba(255, 255, 255, 0.55);
 }
 
-/* ── Speaker Image (Centered) ── */
+/* ── Speaker Image ── */
 .about-speaker-wrap {
   position: absolute;
-  bottom: 0; /* Align to the bottom of the middle area or section */
+  bottom: 0; 
   left: 50%;
   transform: translateX(-50%);
   z-index: 4;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .about-speaker-glow {
@@ -146,10 +142,16 @@
 
 /* ── Speaker Badge ── */
 .about-speaker-info {
+  position: absolute;
+  bottom: 40px; /* Aligned bottom of speaker image */
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   gap: 10px;
+  width: 100%;
+  z-index: 5;
 }
 
 .about-speaker-badge {
@@ -168,7 +170,7 @@
 }
 
 .about-speaker-title {
-  text-align: right;
+  text-align: center;
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 1.5px;
@@ -245,14 +247,16 @@
 @media (max-width: 1024px) {
   .about-middle-area {
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
     gap: 40px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
   }
 
-  .about-left-col, .about-right-col {
-    justify-content: center;
+  .about-left-col {
     width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .about-speaker-wrap {
@@ -260,24 +264,14 @@
     bottom: auto;
     left: auto;
     transform: none;
-    order: -1; /* Move image to top on mobile/tablet */
-    margin-bottom: 20px;
+  }
+
+  .about-speaker-info {
+    bottom: 20px;
   }
 
   .about-speaker-img {
     height: clamp(300px, 40vh, 450px);
-  }
-
-  .about-speaker-info {
-    align-items: center;
-  }
-
-  .about-speaker-title {
-    text-align: center;
-  }
-
-  .about-stats-row {
-    grid-template-columns: 1fr;
   }
 }
 

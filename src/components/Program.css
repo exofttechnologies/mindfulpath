@@ -16,48 +16,44 @@
 
 /* ── Header ── */
 .program-header {
+  text-align: center;
+  margin-bottom: 80px;
   position: relative;
   z-index: 2;
-  text-align: center;
-  margin-bottom: 70px;
 }
 
 .prog-title {
-  font-size: clamp(48px, 10vw, 120px);
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  line-height: 1;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(201, 168, 76, 0.7) 60%,
-    rgba(201, 168, 76, 0.3) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-size: clamp(36px, 6vw, 68px);
+  font-weight: 800;
+  letter-spacing: 0.05em;
   margin-bottom: 24px;
+  color: #fff;
 }
 
 .prog-subtitle-row {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 16px;
-}
-
-.prog-deco {
-  color: rgba(201, 168, 76, 0.5);
-  font-size: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 16px 32px;
+  border-radius: 999px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .prog-subtitle {
-  font-size: 12px;
+  font-size: clamp(10px, 2vw, 13px);
   font-weight: 500;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
-  line-height: 1.8;
+  letter-spacing: 2.5px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.prog-deco {
+  color: #c9a84c;
+  font-size: 16px;
 }
 
 .prog-br {
@@ -66,221 +62,122 @@
 
 /* ── Grid ── */
 .programs-grid {
-  position: relative;
-  z-index: 2;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  max-width: 1200px;
+  gap: 20px;
+  max-width: 1050px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
-/* ── Card ── */
-.program-card {
-  background: rgba(18, 18, 18, 0.85);
-  border: 1px solid rgba(201, 168, 76, 0.12);
-  border-radius: 20px;
-  padding: 32px 28px 28px;
+
+/* ─────────────────────────────────────────────
+   Uiverse Card Style (Adapted for Theme & Posters)
+   ───────────────────────────────────────────── */
+
+.card {
+  width: 100%;
+  border-radius: 30px;
+  background: rgba(20, 20, 20, 0.85); /* Dark neumorphism base */
+  box-shadow: 12px 12px 30px rgba(0, 0, 0, 0.6),
+             -10px -10px 30px rgba(40, 40, 40, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 0;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
-  position: relative;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 0.8),
+             -10px -10px 40px rgba(45, 45, 45, 0.5);
+}
+
+.card__img-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  height: auto;
   overflow: hidden;
 }
 
-.program-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.5), transparent);
-  opacity: 0;
-  transition: opacity 0.35s ease;
+.card__poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.program-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(201, 168, 76, 0.3);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(201, 168, 76, 0.06);
+.card:hover .card__poster {
+  transform: scale(1.08);
 }
 
-.program-card:hover::before {
-  opacity: 1;
-}
-
-/* ── Card Top ── */
-.card-poster-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 18px;
-}
-
-.card-icon-box {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  background: rgba(201, 168, 76, 0.08);
-  border: 1px solid rgba(201, 168, 76, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.prog-icon-svg {
-  width: 30px;
-  height: 30px;
-}
-
-.card-duration-badge {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: rgba(201, 168, 76, 0.7);
-  background: rgba(201, 168, 76, 0.06);
-  border: 1px solid rgba(201, 168, 76, 0.12);
-  padding: 4px 12px;
-  border-radius: 999px;
-}
-
-.card-name {
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #fff;
-  margin-bottom: 12px;
-}
-
-.card-rule {
-  width: 40px;
-  height: 2px;
-  background: rgba(201, 168, 76, 0.35);
-  border-radius: 2px;
-  margin-bottom: 14px;
-}
-
-.card-desc {
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.55);
-  margin-bottom: 20px;
-}
-
-.card-features {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 24px;
+.card__content {
+  padding: 16px 20px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  flex-grow: 1;
 }
 
-.card-features li {
-  font-size: 12px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.65);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.card-check {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: rgba(201, 168, 76, 0.15);
-  color: #c9a84c;
-  font-size: 10px;
+.card__title {
+  font-size: 15px;
   font-weight: 700;
-  flex-shrink: 0;
+  color: #fff;
+  letter-spacing: 0.5px;
 }
 
-.card-enroll-btn {
-  margin-top: auto;
-  width: 100%;
-  padding: 12px 0;
-  border: 1px solid rgba(201, 168, 76, 0.25);
-  border-radius: 12px;
-  background: rgba(201, 168, 76, 0.06);
-  color: #c9a84c;
-  font-family: "Poppins", sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+.card__description {
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.6);
 }
 
-.card-enroll-btn:hover {
-  background: rgba(201, 168, 76, 0.15);
-  border-color: rgba(201, 168, 76, 0.4);
-  transform: scale(1.02);
+
+/* ─────────────────────────────────────────────
+   Responsive
+   ───────────────────────────────────────────── */
+@media (max-width: 1200px) {
+  .programs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.btn-arrow {
-  transition: transform 0.3s ease;
-}
-
-.card-enroll-btn:hover .btn-arrow {
-  transform: translateX(4px);
-}
-
-/* ── Responsive – Tablet ── */
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
   .program-section {
     padding: 100px 40px 80px;
   }
 
-  .programs-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+  .prog-subtitle-row {
+    padding: 14px 24px;
   }
 }
 
-/* ── Responsive – Mobile ── */
 @media (max-width: 600px) {
   .program-section {
     padding: 80px 20px 60px;
   }
 
-  .program-header {
-    margin-bottom: 40px;
-  }
-
-  .prog-subtitle {
-    font-size: 10px;
-    letter-spacing: 1.5px;
+  .programs-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .prog-br {
     display: block;
   }
 
-  .programs-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+  .prog-subtitle-row {
+    flex-direction: column;
+    text-align: center;
+    border-radius: 20px;
+    padding: 20px;
   }
 
-  .program-card {
-    padding: 24px 20px 22px;
-    border-radius: 16px;
-  }
-
-  .card-name {
-    font-size: 14px;
+  .prog-deco {
+    display: none;
   }
 }

@@ -1,16 +1,15 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import "./Hero.css";
 import person from "../assets/person.PNG";
 import concertBg from "../assets/concert-bg.jpg";
-
 
 export default function Hero() {
   const heroRef = useRef(null);
   const imgRef = useRef(null);
   const glowRef = useRef(null);
   const bgTextRef = useRef(null);
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   /* ── Entrance animations ── */
   useEffect(() => {
@@ -41,16 +40,10 @@ export default function Hero() {
           "-=0.8"
         )
         .fromTo(
-          ".hero-nav a",
+          ".nav-links a, .nav-logo-mobile, .nav-hamburger, .hero-top-right",
           { opacity: 0, y: -15 },
           { opacity: 1, y: 0, duration: 0.5, stagger: 0.08 },
           "-=0.6"
-        )
-        .fromTo(
-          ".hero-top-right",
-          { opacity: 0, y: -15 },
-          { opacity: 1, y: 0, duration: 0.5 },
-          "-=0.3"
         )
         .fromTo(
           ".speaker-section",
@@ -69,25 +62,14 @@ export default function Hero() {
           { opacity: 0, y: 30 },
           { opacity: 1, y: 0, duration: 0.6 },
           "-=0.3"
-        )
-        .fromTo(
-          ".glass-border",
-          { opacity: 0 },
-          { opacity: 1, duration: 0.8 },
-          "-=0.4"
         );
     }, heroRef);
 
     return () => ctx.revert();
   }, []);
 
-
-
   return (
     <section className="hero" ref={heroRef}>
-
-
-
 
       {/* ── Orange Glow Circle ── */}
       <div className="gradient-circle" ref={glowRef} />
@@ -98,14 +80,25 @@ export default function Hero() {
       </h1>
 
       {/* ── Navigation ── */}
-      <nav className="hero-nav">
-        <a href="#home">HOME</a>
-        <a href="#program">PROGRAM</a>
-        <a href="#about">ABOUT</a>
-        <a href="#contact">CONTACT</a>
-      </nav>
-      <div className="hero-top-right">
-        <span>MINDFULPATH 20H</span>
+      <div className="hero-nav-wrapper">
+        <nav className="hero-nav">
+          <div className="nav-logo-mobile">MINDFULPATH</div>
+          <button 
+            className={`nav-hamburger ${isMenuOpen ? "is-active" : ""}`}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <span></span><span></span><span></span>
+          </button>
+          <div className={`nav-links ${isMenuOpen ? "nav-links--open" : ""}`}>
+            <a href="#home" onClick={() => setIsMenuOpen(false)}>HOME</a>
+            <a href="#program" onClick={() => setIsMenuOpen(false)}>PROGRAM</a>
+            <a href="#about" onClick={() => setIsMenuOpen(false)}>ABOUT</a>
+            <a href="#contact" onClick={() => setIsMenuOpen(false)}>CONTACT</a>
+          </div>
+        </nav>
+        <div className="hero-top-right">
+          <span>MINDFULPATH 20H</span>
+        </div>
       </div>
 
       {/* ── Person Image ── */}

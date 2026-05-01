@@ -88,7 +88,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* Center: Speaker Image (Absolute) */}
+        {/* Center: Speaker Image & Badge */}
         <div className="about-speaker-wrap">
           <div className="about-speaker-glow" />
           <img
@@ -97,10 +97,7 @@ export default function About() {
             className="about-speaker-img"
             draggable={false}
           />
-        </div>
-
-        {/* Right: Speaker Badge */}
-        <div className="about-right-col">
+          
           <div className="about-speaker-info">
             <div className="about-speaker-badge">
               <span>Shahla.c</span>
