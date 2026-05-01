@@ -1,0 +1,131 @@
+/* ─────────────────────────────────────────────
+   Testimonial Section
+   ───────────────────────────────────────────── */
+.testimonial-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 60px;
+  background-color: transparent;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  z-index: 2;
+}
+
+.testi-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testi-eyebrow {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #c9a84c;
+  margin-bottom: 12px;
+}
+
+.testi-header-text {
+  text-align: center;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 60px;
+  color: #fff;
+}
+
+.testi-highlight {
+  background: linear-gradient(135deg, #c9a84c, #e0c77a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.testi-card {
+  background: rgba(18, 18, 18, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.testi-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(201, 168, 76, 0.4);
+}
+
+.quote-icon {
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.testi-text {
+  font-size: 14px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+  margin-bottom: 30px;
+  flex-grow: 1;
+}
+
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.testi-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(201, 168, 76, 0.15);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #c9a84c;
+}
+
+.testi-meta h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 2px;
+}
+
+.testi-meta p {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 900px) {
+  .testi-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .testimonial-section {
+    padding: 80px 40px;
+  }
+}
+
+@media (max-width: 580px) {
+  .testimonial-section {
+    padding: 60px 20px;
+  }
+  .testi-card {
+    padding: 30px 24px;
+  }
+}

@@ -1,0 +1,286 @@
+/* ─────────────────────────────────────────────
+   Program Section
+   ───────────────────────────────────────────── */
+.program-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 120px 60px 100px;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  background-color: transparent;
+}
+
+
+
+/* ── Header ── */
+.program-header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.prog-title {
+  font-size: clamp(48px, 10vw, 120px);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(201, 168, 76, 0.7) 60%,
+    rgba(201, 168, 76, 0.3) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 24px;
+}
+
+.prog-subtitle-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.prog-deco {
+  color: rgba(201, 168, 76, 0.5);
+  font-size: 10px;
+}
+
+.prog-subtitle {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.8;
+}
+
+.prog-br {
+  display: none;
+}
+
+/* ── Grid ── */
+.programs-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ── Card ── */
+.program-card {
+  background: rgba(18, 18, 18, 0.85);
+  border: 1px solid rgba(201, 168, 76, 0.12);
+  border-radius: 20px;
+  padding: 32px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.program-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.5), transparent);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(201, 168, 76, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 40px rgba(201, 168, 76, 0.06);
+}
+
+.program-card:hover::before {
+  opacity: 1;
+}
+
+/* ── Card Top ── */
+.card-poster-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.card-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(201, 168, 76, 0.08);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prog-icon-svg {
+  width: 30px;
+  height: 30px;
+}
+
+.card-duration-badge {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(201, 168, 76, 0.7);
+  background: rgba(201, 168, 76, 0.06);
+  border: 1px solid rgba(201, 168, 76, 0.12);
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.card-name {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.card-rule {
+  width: 40px;
+  height: 2px;
+  background: rgba(201, 168, 76, 0.35);
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+.card-desc {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 20px;
+}
+
+.card-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-features li {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(201, 168, 76, 0.15);
+  color: #c9a84c;
+  font-size: 10px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.card-enroll-btn {
+  margin-top: auto;
+  width: 100%;
+  padding: 12px 0;
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  border-radius: 12px;
+  background: rgba(201, 168, 76, 0.06);
+  color: #c9a84c;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.card-enroll-btn:hover {
+  background: rgba(201, 168, 76, 0.15);
+  border-color: rgba(201, 168, 76, 0.4);
+  transform: scale(1.02);
+}
+
+.btn-arrow {
+  transition: transform 0.3s ease;
+}
+
+.card-enroll-btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* ── Responsive – Tablet ── */
+@media (max-width: 1024px) {
+  .program-section {
+    padding: 100px 40px 80px;
+  }
+
+  .programs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* ── Responsive – Mobile ── */
+@media (max-width: 600px) {
+  .program-section {
+    padding: 80px 20px 60px;
+  }
+
+  .program-header {
+    margin-bottom: 40px;
+  }
+
+  .prog-subtitle {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .prog-br {
+    display: block;
+  }
+
+  .programs-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .program-card {
+    padding: 24px 20px 22px;
+    border-radius: 16px;
+  }
+
+  .card-name {
+    font-size: 14px;
+  }
+}

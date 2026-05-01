@@ -85,14 +85,7 @@ export default function Hero() {
 
   return (
     <section className="hero" ref={heroRef}>
-      {/* ── Background Layers ── */}
-      <img
-        src={concertBg}
-        alt=""
-        className="hero-bg-image"
-        draggable={false}
-      />
-      <div className="hero-bg-overlay" />
+
 
 
 
@@ -141,8 +134,7 @@ export default function Hero() {
         <h2>Guiding Minds, Empowering lives</h2>
       </div>
 
-      {/* ── Glass Border ── */}
-      <div className="glass-border" />
+
 
       {/* ── Bottom accent star ── */}
       <span className="bottom-star">✦</span>
